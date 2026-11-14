@@ -1,6 +1,16 @@
 # Bluetooth
 bluetooth.device.default_name=OnePlus 9 Pro
 
+# Bluetooth LE Audio (needs the hpnv10 tag 90 ISO unlock)
+bluetooth.profile.bap.broadcast.assist.enabled=true
+bluetooth.profile.bap.broadcast.source.enabled=true
+bluetooth.profile.bap.unicast.client.enabled=true
+bluetooth.profile.ccp.server.enabled=true
+bluetooth.profile.csip.set_coordinator.enabled=true
+bluetooth.profile.hap.client.enabled=true
+bluetooth.profile.mcp.server.enabled=true
+bluetooth.profile.vcp.controller.enabled=true
+
 # Graphics
 ro.surface_flinger.set_idle_timer_ms=250
 ro.surface_flinger.set_touch_timer_ms=300

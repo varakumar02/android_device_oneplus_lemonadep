@@ -109,6 +109,11 @@ TARGET_NEEDS_VULKAN_MEDIA_FIX := true
 # device/oneplus/sm8350-common's OPlusFrameworksResCommon overlay).
 TARGET_DOZE_DOUBLE_TAP_PULSE_SUPPORTED := true
 
+# Shows the "Disable Bluetooth LE Audio" developer option. ro.bluetooth.leaudio_switcher.*
+# has no property_contexts entry (default_prop), so vendor_init can't set it from vendor.prop.
+PRODUCT_PRODUCT_PROPERTIES += \
+    ro.bluetooth.leaudio_switcher.supported=true
+
 ifneq ($(TARGET_BUILD_VARIANT),user)
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     ro.adb.secure=0 \
