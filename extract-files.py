@@ -69,6 +69,8 @@ def blob_fixup_nop_call(
 
 
 blob_fixups: blob_fixups_user_type = {
+    'odm/etc/bt/hpnv10.bin': blob_fixup()
+        .sig_replace('FF FF 00 0B 00 00 00 00 5B', 'FF F9 01 FF 8E 00 00 00 5B'),
     'odm/etc/camera/CameraHWConfiguration.config': blob_fixup()
         .regex_replace('SystemCamera =  0;  0;  1;  1;  1;  1', 'SystemCamera =  0;  0;  0;  0;  0;  1'),
     ('odm/lib64/liblvimfs_wrapper.so', 'odm/lib64/libCOppLceTonemapAPI.so', 'odm/lib64/libSuperRaw.so', 'odm/lib64/libYTCommon.so', 'odm/lib64/libaps_frame_registration.so', 'vendor/lib64/libalsc.so'): blob_fixup()
