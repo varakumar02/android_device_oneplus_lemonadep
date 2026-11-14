@@ -104,7 +104,9 @@ blob_fixups: blob_fixups_user_type = {
         .regex_replace('NFC_DEBUG_ENABLED=1', 'NFC_DEBUG_ENABLED=0'),
     'vendor/etc/libnfc-nxp.conf': blob_fixup()
         .regex_replace('(NXPLOG_.*_LOGLEVEL)=0x03', '\\1=0x02')
-        .regex_replace('NFC_DEBUG_ENABLED=1', 'NFC_DEBUG_ENABLED=0'),
+        .regex_replace('NFC_DEBUG_ENABLED=1', 'NFC_DEBUG_ENABLED=0')
+        .regex_replace('MIFARE_READER_ENABLE=0x01',
+                       'MIFARE_READER_ENABLE=0x01\\nNXP_EXTENDED_FIELD_DETECT_MODE=0x03\\nNXP_OBSERVE_MODE_REQ_NOTIFICATION_TYPE=0x02'),
     'vendor/lib64/hw/camera.qcom.so': blob_fixup()
         .sig_replace('70 01 15 0B 1F 12 00 71 C8 00 00 54 35 00 80 52 60 02 80 52', '70 01 15 0B 1F 2E 00 71 C8 00 00 54 35 00 80 52 60 02 81 52'),
     'vendor/lib64/hw/com.qti.chi.override.so': blob_fixup()
